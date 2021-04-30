@@ -1,0 +1,88 @@
+.notecard-palette {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notecard {
+    height: 30vh;
+    width: 100%;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+.add-notecard-border {
+    background-color: #dcdddf;
+    height: 100%;
+    width: 100%;
+}
+
+#btn-imagediv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-imagediv>img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+.notecard-shadow {
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.72);
+}
+
+.notecard-front {
+    height: 95%;
+    width: 95%;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+    transition: 1s;
+}
+
+.notecard-front-border {
+    padding: 20px;
+    max-height: 95%;
+    max-width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notecard-back {
+    height: 95%;
+    width: 95%;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 1s;
+}
+
+.notecard-back-border {
+    padding: 20px;
+}
+
+.notecard:hover .notecard-front {
+    transform: rotateY(-180deg);
+}
+
+.notecard:hover .notecard-back {
+    transform: rotateY(0deg);
+}
+
+.notecard-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.notecard-btn Button {
+    width: 70%;
+}

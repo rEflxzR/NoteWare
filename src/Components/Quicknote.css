@@ -1,0 +1,31 @@
+.quicknote-box {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+}
+
+.quicknote-box>div {
+    width: 70vw;
+}
+
+#quill-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+#quill-buttons Button {
+    margin-left: 20px;
+}
+
+.ql-editor {
+    min-height: 30em;
+    font-size: 20px;
+}
+
+.ql-snow.ql-toolbar {
+    display: block;
+    background: #eaecec;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
