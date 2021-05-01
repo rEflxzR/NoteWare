@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/NoteWare/static/css/main.7d2054fb.chunk.css",
-    "main.js": "/NoteWare/static/js/main.8fc774cf.chunk.js",
-    "main.js.map": "/NoteWare/static/js/main.8fc774cf.chunk.js.map",
+    "main.js": "/NoteWare/static/js/main.b57cb60f.chunk.js",
+    "main.js.map": "/NoteWare/static/js/main.b57cb60f.chunk.js.map",
     "runtime-main.js": "/NoteWare/static/js/runtime-main.7753a357.js",
     "runtime-main.js.map": "/NoteWare/static/js/runtime-main.7753a357.js.map",
     "static/css/2.f83b9687.chunk.css": "/NoteWare/static/css/2.f83b9687.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.f83b9687.chunk.css",
     "static/js/2.5247d199.chunk.js",
     "static/css/main.7d2054fb.chunk.css",
-    "static/js/main.8fc774cf.chunk.js"
+    "static/js/main.b57cb60f.chunk.js"
   ]
 }
