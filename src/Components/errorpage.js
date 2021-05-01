@@ -5,7 +5,7 @@ class Errorpage extends Component {
     render() {
         return(
             <div style={{ backgroundImage: `url(${photo404})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '100vh', width: '100vw' }}>
-                <h1 className="text-right"><a href={`http://${window.location.hostname}:${window.location.port}/`} rel="noreferrer">Visit HOMEPAGE</a></h1>
+                <h1 className="text-right"><a href={`http://${window.location.hostname}:${window.location.port}/NoteGram/`} rel="noreferrer">Visit HOMEPAGE</a></h1>
             </div>
         )
     }
