@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button'
+import { styled } from '@material-ui/core/styles';
 import { firestore } from '../firebase/firebase'
 import Modal from './modal'
 import './Singlepagenotes.css'
+
+const ReadButton = styled(Button)({
+    background: '#4caf50',
+    color: 'black'
+})
+
+const EditButton = styled(Button)({
+    background: '#f2bf49',
+    color: 'black'
+})
 
 class Singlepagenotes extends Component {
     constructor(props) {
@@ -80,13 +91,13 @@ class Singlepagenotes extends Component {
                                 <div className="notecard-back notecard-shadow">
                                     <div className="notecard-back-border">
                                         <div className="notecard-btn my-4">
-                                            <Button noteId={note.id} onClick={this.handleCardButtonClick} id="read" color="primary" variant="contained" size="large"><strong>Read Note</strong></Button>
+                                            <ReadButton noteId={note.id} onClick={this.handleCardButtonClick} id="read" variant="contained" size="large"><strong>Read Note</strong></ReadButton>
                                         </div>
                                         <div className="notecard-btn my-4">
-                                            <Button noteId={note.id} onClick={this.handleCardButtonClick} id="edit" color="primary" variant="contained" size="large"><strong>Edit Note</strong></Button>
+                                            <EditButton noteId={note.id} onClick={this.handleCardButtonClick} id="edit" variant="contained" size="large"><strong>Edit Note</strong></EditButton>
                                         </div>
                                         <div className="notecard-btn my-4">
-                                            <Button noteId={note.id} onClick={this.handleCardButtonClick} id="delete" color="primary" variant="contained" size="large"><strong>Delete Note</strong></Button>
+                                            <Button style={{ color: 'black' }} noteId={note.id} onClick={this.handleCardButtonClick} id="delete" color="secondary" variant="contained" size="large"><strong>Delete Note</strong></Button>
                                         </div>
                                     </div>
                                 </div>

@@ -17,8 +17,8 @@ class Notedisplay extends Component {
     }
 
     componentDidMount() {
-        const docId = window.location.pathname.split("/").reverse()[0]
-        const collectionName = window.location.pathname.split("/").reverse()[1]
+        const docId = window.location.href.split("/").reverse()[0]
+        const collectionName = window.location.href.split("/").reverse()[1]
         firestore.collection(collectionName).doc(docId).get()
         .then((res) => {
             console.log(res.data())
@@ -42,9 +42,9 @@ class Notedisplay extends Component {
                     <div className="main-card">
                         <div className="content-card">
                             <div className="card-big-shadow">
-                                <div className="card card-just-text" data-background="color" data-color={window.location.pathname.split("/").reverse()[1]==="singlepagenotes" ? "blue" : "purple"} data-radius="none">
+                                <div className="card card-just-text" data-background="color" data-color={window.location.href.split("/").reverse()[1]==="singlepagenotes" ? "blue" : "purple"} data-radius="none">
                                     <div className="content">
-                                        {window.location.pathname.split("/").reverse()[1]==="singlepagenotes" ? (<h1 className="mb-3 category"><strong>{noteData.title}</strong></h1>) : (null)}
+                                        {window.location.href.split("/").reverse()[1]==="singlepagenotes" ? (<h1 className="mb-3 category"><strong>{noteData.title}</strong></h1>) : (null)}
                                         <h5 className="description">{noteData.text}</h5>
                                     </div>
                                 </div>

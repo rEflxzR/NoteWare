@@ -2,11 +2,19 @@ import React, { Component } from 'react'
 import ReactQuill from 'react-quill'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
+import { styled } from '@material-ui/core/styles'
 import { firestore, timestamp } from '../firebase/firebase'
 import 'react-quill/dist/quill.snow.css'
 import './modal.css'
 
 const replaceHtmlRegex = /(<([^>]+)>)/ig
+const StyledButton = styled(Button)({
+    color: 'white',
+    backgroundColor: '#9c27b0',
+    '&:hover': {
+      backgroundColor: '#b72dcf',
+    },
+})
 
 class Modal extends Component {
     constructor(props) {
@@ -73,8 +81,8 @@ class Modal extends Component {
                     singelPageNotesCollection.add({ title, text, createdAt: timestamp() })
                     .then((res) => {
                         this.setState({ text: "", title: "" }, () => {
-                            navigator.clipboard.writeText(`http://${window.location.hostname}:${window.location.port}/NoteWare/${res.path}`)
-                            alert(`Note Saved and Link Copied to Your Clipboard\n\nhttp://${window.location.hostname}:${window.location.port}/NoteWare/${res.path}`)
+                            navigator.clipboard.writeText(`${window.location.href}${res.path}`)
+                            alert(`Note Saved and Link Copied to Your Clipboard\n\n${window.location.href}${res.path}`)
                         })
                     })
                     .catch((err) => {
@@ -83,11 +91,16 @@ class Modal extends Component {
                     })
                 }
             }
+
+            else {
+                navigator.clipboard.writeText(`${window.location.href}singlepagenotes/${this.state.id}`)
+                alert(`Note Link Copied to Clipboard\n\n${window.location.href}singlepagenotes/${this.state.id}`)
+            }
         }
     }
 
     render() {
-        const { title, text } = this.state
+        const { title, text, id } = this.state
 
         if(this.props.modalType==="read") {
             return (
@@ -124,9 +137,11 @@ class Modal extends Component {
                             </div>
                             <ReactQuill theme="snow" value={this.state.text} onChange={this.handleQuillTextChange} />
                             <div className="modal-btn">
-                                <Button onClick={this.handleButtonClick} id="copy" color="primary" size="large" variant="contained">Copy Note</Button>
-                                <Button onClick={this.handleButtonClick} id="download" color="primary" size="large" variant="contained">Download Note</Button>
-                                <Button onClick={this.handleButtonClick} id="save" color="primary" size="large" variant="contained">Save Note</Button>
+                                { id ? (<StyledButton onClick={this.handleButtonClick} id="link" color="secondary" size="large" variant="contained"><strong>Copy Link</strong></StyledButton>) :
+                                    (<StyledButton onClick={this.handleButtonClick} id="copy" color="secondary" size="large" variant="contained"><strong>Copy Note</strong></StyledButton>)
+                                }
+                                <StyledButton onClick={this.handleButtonClick} id="download" color="secondary" size="large" variant="contained"><strong>Download Note</strong></StyledButton>
+                                <StyledButton onClick={this.handleButtonClick} id="save" color="secondary" size="large" variant="contained"><strong>Save Note</strong></StyledButton>
                             </div>
                         </div>
                     </div>
