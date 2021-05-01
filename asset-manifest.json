@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.83013e7f.chunk.css",
-    "main.js": "/static/js/main.5b8f7a7a.chunk.js",
-    "main.js.map": "/static/js/main.5b8f7a7a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.dfaf812a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.dfaf812a.js.map",
-    "static/css/2.f83b9687.chunk.css": "/static/css/2.f83b9687.chunk.css",
-    "static/js/2.5ed620c5.chunk.js": "/static/js/2.5ed620c5.chunk.js",
-    "static/js/2.5ed620c5.chunk.js.map": "/static/js/2.5ed620c5.chunk.js.map",
-    "static/js/3.4b612861.chunk.js": "/static/js/3.4b612861.chunk.js",
-    "static/js/3.4b612861.chunk.js.map": "/static/js/3.4b612861.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.f83b9687.chunk.css.map": "/static/css/2.f83b9687.chunk.css.map",
-    "static/css/main.83013e7f.chunk.css.map": "/static/css/main.83013e7f.chunk.css.map",
-    "static/js/2.5ed620c5.chunk.js.LICENSE.txt": "/static/js/2.5ed620c5.chunk.js.LICENSE.txt"
+    "main.css": "/NoteWare/static/css/main.83013e7f.chunk.css",
+    "main.js": "/NoteWare/static/js/main.5b8f7a7a.chunk.js",
+    "main.js.map": "/NoteWare/static/js/main.5b8f7a7a.chunk.js.map",
+    "runtime-main.js": "/NoteWare/static/js/runtime-main.442dc6da.js",
+    "runtime-main.js.map": "/NoteWare/static/js/runtime-main.442dc6da.js.map",
+    "static/css/2.f83b9687.chunk.css": "/NoteWare/static/css/2.f83b9687.chunk.css",
+    "static/js/2.65870dae.chunk.js": "/NoteWare/static/js/2.65870dae.chunk.js",
+    "static/js/2.65870dae.chunk.js.map": "/NoteWare/static/js/2.65870dae.chunk.js.map",
+    "static/js/3.4b612861.chunk.js": "/NoteWare/static/js/3.4b612861.chunk.js",
+    "static/js/3.4b612861.chunk.js.map": "/NoteWare/static/js/3.4b612861.chunk.js.map",
+    "index.html": "/NoteWare/index.html",
+    "static/css/2.f83b9687.chunk.css.map": "/NoteWare/static/css/2.f83b9687.chunk.css.map",
+    "static/css/main.83013e7f.chunk.css.map": "/NoteWare/static/css/main.83013e7f.chunk.css.map",
+    "static/js/2.65870dae.chunk.js.LICENSE.txt": "/NoteWare/static/js/2.65870dae.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.dfaf812a.js",
+    "static/js/runtime-main.442dc6da.js",
     "static/css/2.f83b9687.chunk.css",
-    "static/js/2.5ed620c5.chunk.js",
+    "static/js/2.65870dae.chunk.js",
     "static/css/main.83013e7f.chunk.css",
     "static/js/main.5b8f7a7a.chunk.js"
   ]
