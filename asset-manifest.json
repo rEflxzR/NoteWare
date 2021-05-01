@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/NoteWare/static/css/main.83013e7f.chunk.css",
-    "main.js": "/NoteWare/static/js/main.8ecafb0d.chunk.js",
-    "main.js.map": "/NoteWare/static/js/main.8ecafb0d.chunk.js.map",
-    "runtime-main.js": "/NoteWare/static/js/runtime-main.442dc6da.js",
-    "runtime-main.js.map": "/NoteWare/static/js/runtime-main.442dc6da.js.map",
+    "main.css": "/NoteWare/static/css/main.7d2054fb.chunk.css",
+    "main.js": "/NoteWare/static/js/main.8fc774cf.chunk.js",
+    "main.js.map": "/NoteWare/static/js/main.8fc774cf.chunk.js.map",
+    "runtime-main.js": "/NoteWare/static/js/runtime-main.7753a357.js",
+    "runtime-main.js.map": "/NoteWare/static/js/runtime-main.7753a357.js.map",
     "static/css/2.f83b9687.chunk.css": "/NoteWare/static/css/2.f83b9687.chunk.css",
-    "static/js/2.144faeba.chunk.js": "/NoteWare/static/js/2.144faeba.chunk.js",
-    "static/js/2.144faeba.chunk.js.map": "/NoteWare/static/js/2.144faeba.chunk.js.map",
-    "static/js/3.4b612861.chunk.js": "/NoteWare/static/js/3.4b612861.chunk.js",
-    "static/js/3.4b612861.chunk.js.map": "/NoteWare/static/js/3.4b612861.chunk.js.map",
+    "static/js/2.5247d199.chunk.js": "/NoteWare/static/js/2.5247d199.chunk.js",
+    "static/js/2.5247d199.chunk.js.map": "/NoteWare/static/js/2.5247d199.chunk.js.map",
+    "static/js/3.3ea9adb9.chunk.js": "/NoteWare/static/js/3.3ea9adb9.chunk.js",
+    "static/js/3.3ea9adb9.chunk.js.map": "/NoteWare/static/js/3.3ea9adb9.chunk.js.map",
     "index.html": "/NoteWare/index.html",
     "static/css/2.f83b9687.chunk.css.map": "/NoteWare/static/css/2.f83b9687.chunk.css.map",
-    "static/css/main.83013e7f.chunk.css.map": "/NoteWare/static/css/main.83013e7f.chunk.css.map",
-    "static/js/2.144faeba.chunk.js.LICENSE.txt": "/NoteWare/static/js/2.144faeba.chunk.js.LICENSE.txt",
+    "static/css/main.7d2054fb.chunk.css.map": "/NoteWare/static/css/main.7d2054fb.chunk.css.map",
+    "static/js/2.5247d199.chunk.js.LICENSE.txt": "/NoteWare/static/js/2.5247d199.chunk.js.LICENSE.txt",
     "static/media/photo404.c610c119.jpg": "/NoteWare/static/media/photo404.c610c119.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.442dc6da.js",
+    "static/js/runtime-main.7753a357.js",
     "static/css/2.f83b9687.chunk.css",
-    "static/js/2.144faeba.chunk.js",
-    "static/css/main.83013e7f.chunk.css",
-    "static/js/main.8ecafb0d.chunk.js"
+    "static/js/2.5247d199.chunk.js",
+    "static/css/main.7d2054fb.chunk.css",
+    "static/js/main.8fc774cf.chunk.js"
   ]
 }
