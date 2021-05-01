@@ -11,13 +11,12 @@ class Quicknote extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            quillText: null,
+            quillText: "",
             currentLink: ""
         }
 
         this.handleQuillTextChange = this.handleQuillTextChange.bind(this)
         this.handleTextCopy = this.handleTextCopy.bind(this)
-        this.handleTextDownload = this.handleTextDownload.bind(this)
         this.handleTextLink = this.handleTextLink.bind(this)
     }
 
@@ -30,25 +29,26 @@ class Quicknote extends Component {
         navigator.clipboard.writeText(text)
     }
 
-    handleTextDownload() {
-
-    }
-
     handleTextLink() {
-        const quickNotesCollection = firestore.collection('quicknotes')
-        const text = this.state.quillText.replace(replaceHtmlRegex, "")
-        quickNotesCollection.add({ text, createdAt: timestamp() })
-        .then((res) => {
-            this.setState({ quillText: null }, () => {
-                navigator.clipboard.writeText(`http://${window.location.hostname}:${window.location.port}/${res.path}`)
-                alert(`Shareable Link Copied to Your Clipboard\n\nhttp://${window.location.hostname}:${window.location.port}/${res.path}
-            `)
+        if(this.state.quillText==="") {
+            alert("Text Cannot Be Empty")
+        }
+        else {
+            const quickNotesCollection = firestore.collection('quicknotes')
+            const text = this.state.quillText.replace(replaceHtmlRegex, "")
+            quickNotesCollection.add({ text, createdAt: timestamp() })
+            .then((res) => {
+                this.setState({ quillText: "" }, () => {
+                    navigator.clipboard.writeText(`http://${window.location.hostname}:${window.location.port}/${res.path}`)
+                    alert(`Shareable Link Copied to Your Clipboard\n\nhttp://${window.location.hostname}:${window.location.port}/${res.path}
+                `)
+                })
             })
-        })
-        .catch((err) => {
-            console.log("SOME ERROR OCCURRED")
-            console.log(err)
-        })
+            .catch((err) => {
+                console.log("SOME ERROR OCCURRED")
+                console.log(err)
+            })
+        }
     }
 
     render() {

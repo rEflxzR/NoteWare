@@ -36,7 +36,7 @@ class SignIn extends Component {
                         </Tabs>
                     </Toolbar>
                 </AppBar>
-                <div style={{ marginTop: '150px', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ minHeight: '100vh', marginTop: '150px', display: 'flex', justifyContent: 'center', overflow: 'auto' }}>
                     <Quicknote />
                 </div>
             </div>

@@ -17,7 +17,6 @@ import NoteIcon from '@material-ui/icons/Note';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import MenuIcon from '@material-ui/icons/Menu';
 import EventNoteIcon from '@material-ui/icons/EventNote';
-import BookIcon from '@material-ui/icons/Book';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
 import { withStyles } from '@material-ui/core/styles'
 import styles from '../Styles/Navbarstyles'
@@ -65,13 +64,6 @@ class Notedashboard extends Component {
 
     handleLogOutClick() {
         auth.signOut()
-        // .then(() => {
-        //     this.props.history.replace("/")
-        // })
-        // .catch((err) => {
-        //     console.log("SOME ERROR OCCURRED")
-        //     console.log(err)
-        // })
     }
 
     render() {
@@ -89,7 +81,7 @@ class Notedashboard extends Component {
                         <Typography className={classes.heading} variant="h3" noWrap><strong>NOTE Ware</strong></Typography>
 
                         <Tabs textColor="white" className={classes.tabs} value={"logout"} aria-label="simple tabs example">
-                            <Tab onClick={this.handleLogOutClick} icon={<PersonPinIcon fontSize="default" />} label="logout" />
+                            <Tab onClick={this.handleLogOutClick} icon={<PersonPinIcon fontSize="large" />} label="logout" />
                         </Tabs>
                     </Toolbar>
                 </AppBar>
@@ -102,8 +94,7 @@ class Notedashboard extends Component {
 
                     <Divider />
                         <List className={classes.list}>
-                        {[{"text": 'Quick Note', "icon": <NoteIcon color="inherit" className={classes.icon}/>}, {"text": 'Single Page Notes', "icon": <EventNoteIcon className={classes.icon}/>}, 
-                        {"text": 'Notebook', "icon": <BookIcon className={classes.icon}/>}].map((icon, index) => (
+                        {[{"text": 'Quick Note', "icon": <NoteIcon color="inherit" className={classes.icon}/>}, {"text": 'Single Page Notes', "icon": <EventNoteIcon className={classes.icon}/>}].map((icon, index) => (
                             <ListItem onClick={this.changePage} className={classes.listItem} button key={icon.text} value={icon.text}>
                                 <ListItemIcon>{icon.icon}</ListItemIcon>
                                 <strong><ListItemText color="inherit" primary={icon.text} /></strong>
@@ -116,7 +107,6 @@ class Notedashboard extends Component {
                     <div className={classes.mainBoxDropDown} />
                     {currentPage==="Quick Note" && <Quicknote />}
                     {currentPage==="Single Page Notes" && <Singlepagenotes />}
-                    {currentPage==="Notebook" && <Quicknote />}
 
                 </main>
             </div>

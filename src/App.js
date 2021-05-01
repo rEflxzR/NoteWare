@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import {auth} from './firebase/firebase'
 import Notedashboard from './Components/Notedashboard'
 import SignIn from './Components/SignIn'
-import Quicknotedisplay from './Components/Quicknotedisplay'
+import Notedisplay from './Components/Notedisplay'
 
 class App extends Component {
 	constructor(props) {
@@ -27,10 +27,13 @@ class App extends Component {
 					<Route exact path="/" component={() => {
 						return user ? <Notedashboard /> : <SignIn />
 					}} />
+					
 					<Route exact path="/dashboard" component={() => {
 						return user ? <Notedashboard /> : <Redirect to="/" />
 					}} />
-					<Route exact path="/quicknotes/:id" component={Quicknotedisplay} />
+
+					<Route exact path="/quicknotes/:id" component={Notedisplay} />
+					<Route exact path="/singlepagenotes/:id" component={Notedisplay} />
 				</Switch>
 			</div>
 		)

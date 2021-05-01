@@ -55,7 +55,8 @@ const styles = (theme) => ({
     },
     listItem: {
         color: 'black',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginTop: '20px'
     },
     icon: {
         color: 'black',
@@ -70,6 +71,10 @@ const styles = (theme) => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
         marginLeft: -drawerWidth,
+    },
+    cardcontent: {
+        minHeight: '100vh',
+        overflow: 'auto',
     },
     contentShift: {
         transition: theme.transitions.create('margin', {

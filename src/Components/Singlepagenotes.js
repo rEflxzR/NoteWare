@@ -9,7 +9,9 @@ class Singlepagenotes extends Component {
         super(props)
         this.state = {
             allNotes: [],
-            showModal: false
+            clickedNote: [],
+            showModal: false,
+            modalType: "",
         }
         
         this.addNewNote = this.addNewNote.bind(this)
@@ -29,12 +31,12 @@ class Singlepagenotes extends Component {
     }
 
     addNewNote() {
-        this.setState({ showModal: true })
+        this.setState({ showModal: true, clickedNote: [], modalType: "edit" })
     }
 
     closeModal(param) {
         if(param.currentTarget===param.target) {
-            this.setState({ showModal: false })
+            this.setState({ showModal: false, modalType: "" })
         }
     }
 
@@ -43,10 +45,11 @@ class Singlepagenotes extends Component {
         const noteId = evt.currentTarget.getAttribute("noteId")
         if(buttonId==="read") {
             const selectedNote = this.state.allNotes.filter(note => noteId===note.id)
-            // SHOW THIS IN MODAL
+            this.setState({ clickedNote: selectedNote, showModal: true, modalType: "read" })
         }
         else if(buttonId==="edit") {
             const selectedNote = this.state.allNotes.filter(note => noteId===note.id)
+            this.setState({ clickedNote: selectedNote, showModal: true, modalType: "edit" })
         }
         else {
             firestore.collection('singlepagenotes').onSnapshot((snap) => {
@@ -60,7 +63,7 @@ class Singlepagenotes extends Component {
     }
 
     render() {
-        const { allNotes } = this.state
+        const { allNotes, clickedNote, modalType } = this.state
 
         return (
             <div>
@@ -70,6 +73,7 @@ class Singlepagenotes extends Component {
                             return <div className="notecard col col-12 col-lg-3">
                                 <div className="notecard-front notecard-shadow">
                                     <div className="notecard-front-border">
+                                        <h3 className="text-center my-2"><strong>{note.title}</strong></h3>
                                         <h5 className="text-center">{note.text}</h5>
                                     </div>
                                 </div>
@@ -101,7 +105,7 @@ class Singlepagenotes extends Component {
                     </div>
                 </div>
 
-                {this.state.showModal ? (<Modal closeModal={this.closeModal} />) : (null)}
+                {this.state.showModal ? (<Modal closeModal={this.closeModal} modalType={modalType} info={clickedNote.length ? clickedNote : [{id: "", title: "", text: ""}]} />) : (null)}
             </div>
         )
     }
