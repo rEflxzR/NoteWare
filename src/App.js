@@ -4,6 +4,7 @@ import {auth} from './firebase/firebase'
 import Notedashboard from './Components/Notedashboard'
 import SignIn from './Components/SignIn'
 import Notedisplay from './Components/Notedisplay'
+import Errorpage from './Components/errorpage'
 
 class App extends Component {
 	constructor(props) {
@@ -34,6 +35,7 @@ class App extends Component {
 
 					<Route exact path="/quicknotes/:id" component={Notedisplay} />
 					<Route exact path="/singlepagenotes/:id" component={Notedisplay} />
+					<Route path="/*" component={Errorpage} />
 				</Switch>
 			</div>
 		)
