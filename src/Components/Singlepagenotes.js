@@ -84,7 +84,7 @@ class Singlepagenotes extends Component {
                 <div className="notecard-palette row">
                     {
                         allNotes.map((note) => {
-                            const displayText = note.text.replace(htmlexceptbr, "")
+                            const displayText = note.text.replace(htmlexceptbr, " ")
                             return <div className="notecard col col-12 col-lg-3">
                                 <div className="notecard-front notecard-shadow">
                                     <div className="notecard-front-border">

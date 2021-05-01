@@ -25,7 +25,7 @@ class Notedisplay extends Component {
         const collectionName = window.location.href.split("/").reverse()[1]
         firestore.collection(collectionName).doc(docId).get()
         .then((res) => {
-            this.setState({ text: res.data().text.replace(htmlexceptbr, ""), title: res.data().title })
+            this.setState({ text: res.data().text.replace(htmlexceptbr, " "), title: res.data().title })
         })
     }
 

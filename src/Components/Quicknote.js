@@ -30,7 +30,7 @@ class Quicknote extends Component {
     }
 
     handleTextCopy() {
-        const text = this.state.quillText.replace(replaceHtmlRegex, "")
+        const text = this.state.quillText.replace(replaceHtmlRegex, " ")
         navigator.clipboard.writeText(text)
     }
 
@@ -40,7 +40,7 @@ class Quicknote extends Component {
         }
         else {
             const quickNotesCollection = firestore.collection('quicknotes')
-            const text = this.state.quillText.replace(replaceHtmlRegex, "")
+            const text = this.state.quillText.replace(replaceHtmlRegex, " ")
             quickNotesCollection.add({ text, createdAt: timestamp() })
             .then((res) => {
                 this.setState({ quillText: "" }, () => {
