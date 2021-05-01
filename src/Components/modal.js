@@ -73,8 +73,8 @@ class Modal extends Component {
                     singelPageNotesCollection.add({ title, text, createdAt: timestamp() })
                     .then((res) => {
                         this.setState({ text: "", title: "" }, () => {
-                            navigator.clipboard.writeText(`http://${window.location.hostname}:${window.location.port}/${res.path}`)
-                            alert(`Note Saved and Link Copied to Your Clipboard\n\nhttp://${window.location.hostname}:${window.location.port}/${res.path}`)
+                            navigator.clipboard.writeText(`http://${window.location.hostname}:${window.location.port}/NoteWare/${res.path}`)
+                            alert(`Note Saved and Link Copied to Your Clipboard\n\nhttp://${window.location.hostname}:${window.location.port}/NoteWare/${res.path}`)
                         })
                     })
                     .catch((err) => {

@@ -39,8 +39,8 @@ class Quicknote extends Component {
             quickNotesCollection.add({ text, createdAt: timestamp() })
             .then((res) => {
                 this.setState({ quillText: "" }, () => {
-                    navigator.clipboard.writeText(`http://${window.location.hostname}:${window.location.port}/${res.path}`)
-                    alert(`Shareable Link Copied to Your Clipboard\n\nhttp://${window.location.hostname}:${window.location.port}/${res.path}
+                    navigator.clipboard.writeText(`http://${window.location.hostname}:${window.location.port}/NoteWare/${res.path}`)
+                    alert(`Shareable Link Copied to Your Clipboard\n\nhttp://${window.location.hostname}:${window.location.port}/NoteWare/${res.path}
                 `)
                 })
             })
