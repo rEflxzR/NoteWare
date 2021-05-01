@@ -5,6 +5,9 @@ import { firestore } from '../firebase/firebase'
 import Modal from './modal'
 import './Singlepagenotes.css'
 
+
+const htmlexceptbr = /<(?!\s*br\s*\/?)[^>]+>/gi
+
 const ReadButton = styled(Button)({
     background: '#4caf50',
     color: 'black'
@@ -81,11 +84,12 @@ class Singlepagenotes extends Component {
                 <div className="notecard-palette row">
                     {
                         allNotes.map((note) => {
+                            const displayText = note.text.replace(htmlexceptbr, "")
                             return <div className="notecard col col-12 col-lg-3">
                                 <div className="notecard-front notecard-shadow">
                                     <div className="notecard-front-border">
                                         <h3 className="text-center my-2"><strong>{note.title}</strong></h3>
-                                        <h5 className="text-center">{note.text}</h5>
+                                        <h5 className="text-center">{displayText}</h5>
                                     </div>
                                 </div>
                                 <div className="notecard-back notecard-shadow">

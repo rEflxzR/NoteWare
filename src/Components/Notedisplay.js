@@ -8,11 +8,15 @@ import styles from '../Styles/Navbarstyles'
 import {firestore} from '../firebase/firebase'
 import './Notedisplay.css'
 
+
+const htmlexceptbr = /<(?!\s*br\s*\/?)[^>]+>/gi
+
 class Notedisplay extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            noteData: []
+            title: "",
+            text: ""
         }
     }
 
@@ -21,14 +25,13 @@ class Notedisplay extends Component {
         const collectionName = window.location.href.split("/").reverse()[1]
         firestore.collection(collectionName).doc(docId).get()
         .then((res) => {
-            console.log(res.data())
-            this.setState({ noteData: res.data() })
+            this.setState({ text: res.data().text.replace(htmlexceptbr, ""), title: res.data().title })
         })
     }
 
     render() {
         const { classes } = this.props
-        const { noteData } = this.state
+        const { text, title } = this.state
 
         return (
             <div className="main-sharedurl">
@@ -44,8 +47,8 @@ class Notedisplay extends Component {
                             <div className="card-big-shadow">
                                 <div className="card card-just-text" data-background="color" data-color={window.location.href.split("/").reverse()[1]==="singlepagenotes" ? "blue" : "purple"} data-radius="none">
                                     <div className="content">
-                                        {window.location.href.split("/").reverse()[1]==="singlepagenotes" ? (<h1 className="mb-3 category"><strong>{noteData.title}</strong></h1>) : (null)}
-                                        <h5 className="description">{noteData.text}</h5>
+                                        {window.location.href.split("/").reverse()[1]==="singlepagenotes" ? (<h1 className="mb-3 category"><strong>{title}</strong></h1>) : (null)}
+                                        <h5 className="description">{text}</h5>
                                     </div>
                                 </div>
                             </div>

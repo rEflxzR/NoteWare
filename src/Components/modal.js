@@ -7,7 +7,9 @@ import { firestore, timestamp } from '../firebase/firebase'
 import 'react-quill/dist/quill.snow.css'
 import './modal.css'
 
-const replaceHtmlRegex = /(<([^>]+)>)/ig
+
+const htmlregex = /(<([^>]+)>)/ig
+
 const StyledButton = styled(Button)({
     color: 'white',
     backgroundColor: '#9c27b0',
@@ -48,12 +50,12 @@ class Modal extends Component {
         else {
             const buttonId = evt.currentTarget.getAttribute("id")
             if(buttonId==="copy") {
-                navigator.clipboard.writeText(this.state.text.replace(replaceHtmlRegex, ""))
+                navigator.clipboard.writeText(this.state.text.replace(htmlregex, ""))
                 alert(`Note Text Copied to Clipboard`)
             }
             else if(buttonId==="download") {
                 const element = document.createElement("a")
-                const file = new Blob([`${this.state.title}\n\n${this.state.text.replace(replaceHtmlRegex, "")}`], 
+                const file = new Blob([`${this.state.title}\n\n${this.state.text.replace(htmlregex, " ")}`], 
                 {type: 'text/plain;charset=utf-8'})
                 
                 element.href = URL.createObjectURL(file)
@@ -63,7 +65,7 @@ class Modal extends Component {
             }
             else if(buttonId==="save") {
                 const singelPageNotesCollection = firestore.collection('singlepagenotes')
-                const text = this.state.text.replace(replaceHtmlRegex, "")
+                const text = this.state.text
                 const title = this.state.title
                 const noteId = this.state.id
 
@@ -103,6 +105,7 @@ class Modal extends Component {
         const { title, text, id } = this.state
 
         if(this.props.modalType==="read") {
+            const displayText = text.replace(htmlregex, " ")
             return (
                 <div className="modal-display">
                     <div onClick={this.handleModalCloseClick} className="main-modal row">
@@ -114,7 +117,7 @@ class Modal extends Component {
                                         <div className="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
                                             <div className="content">
                                                 <h1 className="mb-3 category text-dark"><strong>{title}</strong></h1>
-                                                <h5 className="description text-dark">{text}</h5>
+                                                <h5 className="description text-dark">{displayText}</h5>
                                             </div>
                                         </div>
                                     </div>
