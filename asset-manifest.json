@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/NoteWare/static/css/main.83013e7f.chunk.css",
-    "main.js": "/NoteWare/static/js/main.127f962d.chunk.js",
-    "main.js.map": "/NoteWare/static/js/main.127f962d.chunk.js.map",
+    "main.js": "/NoteWare/static/js/main.cdd854dd.chunk.js",
+    "main.js.map": "/NoteWare/static/js/main.cdd854dd.chunk.js.map",
     "runtime-main.js": "/NoteWare/static/js/runtime-main.442dc6da.js",
     "runtime-main.js.map": "/NoteWare/static/js/runtime-main.442dc6da.js.map",
     "static/css/2.f83b9687.chunk.css": "/NoteWare/static/css/2.f83b9687.chunk.css",
-    "static/js/2.144faeba.chunk.js": "/NoteWare/static/js/2.144faeba.chunk.js",
-    "static/js/2.144faeba.chunk.js.map": "/NoteWare/static/js/2.144faeba.chunk.js.map",
+    "static/js/2.37103606.chunk.js": "/NoteWare/static/js/2.37103606.chunk.js",
+    "static/js/2.37103606.chunk.js.map": "/NoteWare/static/js/2.37103606.chunk.js.map",
     "static/js/3.4b612861.chunk.js": "/NoteWare/static/js/3.4b612861.chunk.js",
     "static/js/3.4b612861.chunk.js.map": "/NoteWare/static/js/3.4b612861.chunk.js.map",
     "index.html": "/NoteWare/index.html",
     "static/css/2.f83b9687.chunk.css.map": "/NoteWare/static/css/2.f83b9687.chunk.css.map",
     "static/css/main.83013e7f.chunk.css.map": "/NoteWare/static/css/main.83013e7f.chunk.css.map",
-    "static/js/2.144faeba.chunk.js.LICENSE.txt": "/NoteWare/static/js/2.144faeba.chunk.js.LICENSE.txt",
+    "static/js/2.37103606.chunk.js.LICENSE.txt": "/NoteWare/static/js/2.37103606.chunk.js.LICENSE.txt",
     "static/media/photo404.c610c119.jpg": "/NoteWare/static/media/photo404.c610c119.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.442dc6da.js",
     "static/css/2.f83b9687.chunk.css",
-    "static/js/2.144faeba.chunk.js",
+    "static/js/2.37103606.chunk.js",
     "static/css/main.83013e7f.chunk.css",
-    "static/js/main.127f962d.chunk.js"
+    "static/js/main.cdd854dd.chunk.js"
   ]
 }
